@@ -1,3 +1,4 @@
+// components/NavbarItems.jsx
 "use client";
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
@@ -5,14 +6,15 @@ import React from 'react';
 
 export default function NavbarItems({ title, param, Icon }) {
   const searchParams = useSearchParams();
-  const genre = searchParams.get('genre');
+  const categorie = searchParams.get('categorie');
+  const type = searchParams.get('type');
 
   return (
     <div>
       <Link
-        href={`/?genre=${param}`}
+        href={`/?categorie=${param.categorie}&type=${param.type}`}
         className={`flex items-center hover:text-amber-600 font-semibold ${
-          genre === param
+          categorie === param.categorie && type === param.type
             ? 'underline underline-offset-8 decoration-4 decoration-amber-500 rounded-lg'
             : ''
         }`}
