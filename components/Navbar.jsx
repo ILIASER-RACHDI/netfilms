@@ -1,4 +1,3 @@
-// components/Navbar.jsx
 "use client";
 import React from 'react';
 import NavbarItems from './NavbarItems';
@@ -29,9 +28,9 @@ export default function Navbar() {
       <div>
         <h3 className="text-gray-500 uppercase text-sm">TV Shows</h3>
         <ul className="space-y-2 mt-2">
-          <NavbarItems title="On the Air" param={{ categorie: 'tvshows', type: 'on-the-air' }} Icon={FaTv} />
-          <NavbarItems title="Popular" param={{ categorie: 'tvshows', type: 'popular' }} Icon={BsFillPeopleFill} />
-          <NavbarItems title="Top Rated" param={{ categorie: 'tvshows', type: 'top-rated' }} Icon={BsFillStarFill} />
+          <NavbarItems title="On the Air" param={{ categorie: 'shows', type: 'on-the-air' }} Icon={FaTv} />
+          <NavbarItems title="Popular" param={{ categorie: 'shows', type: 'popular' }} Icon={BsFillPeopleFill} />
+          <NavbarItems title="Top Rated" param={{ categorie: 'shows', type: 'top-rated' }} Icon={BsFillStarFill} />
         </ul>
       </div>
     </aside>
