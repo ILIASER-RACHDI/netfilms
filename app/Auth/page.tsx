@@ -3,17 +3,32 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+interface AuthResponse {
+    message: string;
+    success: boolean;
+}
+
 export default function AuthForm() {
     const [isLogged, setIsLogged] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
     const router = useRouter();
 
     // Fonction pour gérer la connexion
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
 
+        if (!username || !password) {
+            setError('Nom d’utilisateur et mot de passe sont requis');
+            return;
+        }
+
+        setLoading(true);
+        setError(''); 
+
+        try {
             const response = await fetch('/api/auth', {
                 method: 'POST',
                 headers: {
@@ -22,7 +37,7 @@ export default function AuthForm() {
                 body: JSON.stringify({ username, password }),
             });
 
-            const data = await response.json();
+            const data: AuthResponse = await response.json();
 
             if (response.ok) {
                 setIsLogged(true);
@@ -31,7 +46,12 @@ export default function AuthForm() {
             } else {
                 setError(data.message);
             }
-
+        } catch (error) {
+            console.error('Erreur de connexion:', error); // Log de l'erreur
+            setError('Erreur de connexion. Veuillez réessayer plus tard.');
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -60,8 +80,12 @@ export default function AuthForm() {
                         className="w-full px-4 py-2 border border-gray-300 rounded"
                     />
 
-                    <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                        Se connecter
+                    <button
+                        type="submit"
+                        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                        disabled={loading}
+                    >
+                        {loading ? 'Connexion...' : 'Se connecter'}
                     </button>
                 </form>
             )}
