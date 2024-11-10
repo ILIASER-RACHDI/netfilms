@@ -10,7 +10,7 @@ export default function Card({ item }) {
   const offset = circumference - (percentage / 100) * circumference; 
 
   return (
-    <Link href={`/details/${item.id}`} passHref>
+    <Link href={`/movie/${item.id}`} passHref>
       <div className="group relative w-48 flex flex-col items-center">
         <img
           src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}

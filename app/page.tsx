@@ -24,7 +24,7 @@ export default async function Home({ searchParams }: { searchParams: SearchParam
   const data = await res.json();
 
 
-  console.log("Résultats de l'API interne :", data); 
+  /*console.log("Résultats de l'API interne :", data);*/ 
 return (
 
     <div>
