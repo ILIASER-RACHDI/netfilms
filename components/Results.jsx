@@ -24,6 +24,7 @@ export default function Results({ results }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-full">
             {shows.map((show) => (
               <Card key={show.id} item={show} />
+
             ))}
           </div>
         </div>
