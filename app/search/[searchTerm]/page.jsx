@@ -24,7 +24,7 @@ export default async function SearchPage({ params }) {
             {
                 results && results.length === 0 && (
                     <div className="text-center py-12">
-                        No results found for '{searchTerm}'.
+                        No results found
                     </div>
                 )
             }
