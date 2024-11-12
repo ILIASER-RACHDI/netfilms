@@ -9,7 +9,6 @@ export default async function SearchPage({ params }) {
     );
     const movieData = await movieRes.json();
     const movies = movieData.results || [];
-    console.log("movies",movies);
     // Requête pour les émissions de télévision
     const showsRes = await fetch(
         `https://api.themoviedb.org/3/search/tv?api_key=${TMDB_API_KEY}&query=${searchTerm}&language=en-US&page=1&include_adult=false`
@@ -17,7 +16,6 @@ export default async function SearchPage({ params }) {
 
     const showsData = await showsRes.json();
     const shows = showsData.results || [];
-    console.log("shows",shows);
     const results = [...movies, ...shows];
     return (
         <div>
