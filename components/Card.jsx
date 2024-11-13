@@ -11,7 +11,7 @@ export default function Card({ item, type }) {
   const URL =`/details/${type}/${item.id}`;
   return (
       <Link href={URL} passHref>
-        <div className="group relative w-48 flex flex-col items-center">
+        <div className="group relative w-48 flex flex-col items-center card-container">
           <img
               src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
               alt={item.title || item.name || 'No title'}
