@@ -8,7 +8,7 @@ export default function Card({ item, type }) {
   const radius = 10;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (percentage / 100) * circumference;
-  const URL =`/category/${type}/${item.id}`;
+  const URL =`/details/${type}/${item.id}`;
   return (
       <Link href={URL} passHref>
         <div className="group relative w-48 flex flex-col items-center">
