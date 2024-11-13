@@ -24,12 +24,15 @@ export default async function MoviePage({ params }) {
     const videoUrl = trailer ? `https://www.youtube.com/embed/${trailer.key}` : '';
 
     return (
-        <div style={{ fontFamily: 'Arial, sans-serif', color: '#FFFFFF' }}>
-            <HeaderDetails show={show} />
 
+        <div style={{ fontFamily: 'Arial, sans-serif', color: '#FFFFFF' }}>
+
+            <HeaderDetails show={show} />
+            <h2 style={{fontSize: "1.8rem", fontWeight: "bold", color: "black", marginTop:"20px"}}> Média</h2>
             {/* Section défilable pour la bande-annonce et la galerie */}
             <div className="scroll-container">
-                <div style={{ flex: '0 0 auto' }}>
+
+                <div style={{ flex: '0 0 auto' ,marginTop:"10px"}}>
                     <TrailerDetails videoUrl={videoUrl} />
                 </div>
                 <GalleryDetails backdrops={backdrops} />

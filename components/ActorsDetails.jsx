@@ -1,27 +1,26 @@
-import ScrollContainer from "./ScrollContainer";
 
 export default function ActorsDetails({ actors }) {
     return (
         <div>
-            <h2
+        <h2
+            style={{
+                fontSize: "1.8rem",
+                fontWeight: "bold",
+                color: "black",
+                marginBottom: "20px",
+                marginTop: "20px",
+            }}
+        >
+            Acteurs
+        </h2>
+    <div className={"scroll-container"}>
+        {actors.map((actor) => (
+            <div
+                key={actor.id}
                 style={{
-                    fontSize: "1.8rem",
-                    fontWeight: "bold",
-                    color: "black",
-                    marginBottom: "20px",
-                    marginTop: "20px",
-                }}
-            >
-                Acteurs
-            </h2>
-            <ScrollContainer>
-                {actors.map((actor) => (
-                    <div
-                        key={actor.id}
-                        style={{
-                            width: "150px",
-                            minWidth: "150px",
-                            backgroundColor: "#FFFFFF", // Carte blanche
+                    width: "150px",
+                    minWidth: "150px",
+                    backgroundColor: "#FFFFFF",
                             borderRadius: "10px",
                             boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)", // Légère ombre
                             overflow: "hidden",
@@ -62,7 +61,7 @@ export default function ActorsDetails({ actors }) {
                         </div>
                     </div>
                 ))}
-            </ScrollContainer>
+        </div>
         </div>
     );
 }
