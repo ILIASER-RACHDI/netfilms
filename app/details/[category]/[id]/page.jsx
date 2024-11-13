@@ -1,10 +1,14 @@
 export default async function MoviePage({ params }) {
     const showId = params.id;
+    let categorie = params.category;
     const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
-    // URLs pour récupérer les données du film et des acteurs
-    const showUrl = `https://api.themoviedb.org/3/tv/${showId}?api_key=${TMDB_API_KEY}`;
-    const creditsUrl = `https://api.themoviedb.org/3/tv/${showId}/credits?api_key=${TMDB_API_KEY}`;
+    if(categorie==='show'){
+        categorie='tv';
+    }
+
+    const showUrl = `https://api.themoviedb.org/3/${categorie}/${showId}?api_key=${TMDB_API_KEY}`;
+    const creditsUrl = `https://api.themoviedb.org/3/${categorie}/${showId}/credits?api_key=${TMDB_API_KEY}`;
 
     // Récupération des données du film
     const res = await fetch(showUrl);
@@ -57,7 +61,7 @@ export default async function MoviePage({ params }) {
 
                     {/* Détails du film */}
                     <div style={{ marginLeft: '20px' }}>
-                        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold' }}>{show.title} ({new Date(show.release_date).getFullYear()})</h1>
+                        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold' }}>{show.name ||show.title} ({new Date(show.release_date).getFullYear() || new Date(show.first_air_date).getFullYear()})</h1>
                         <p style={{ fontSize: '1.2rem', fontStyle: 'italic' }}>{show.tagline}</p>
                         <p style={{ marginTop: '10px' }}>{show.overview}</p>
                     </div>
