@@ -15,7 +15,7 @@ export default function Mydata() {
   const [hasMore, setHasMore] = useState(true); // État pour vérifier s'il reste des pages
   const [showScroll, setShowScroll] = useState(false); // État pour afficher la flèche
 
-  const apiUrl = `http://localhost:3000/api/${categorie}/${type}?page=${page}`;
+  const apiUrl = `/api/${categorie}/${type}?page=${page}`;
 
   const fetchData = useCallback(async () => {
     if (loading || !hasMore) return;

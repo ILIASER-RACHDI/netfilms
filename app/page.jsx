@@ -1,36 +1,29 @@
 "use client"
 import { AppSidebar } from "@/components/app-sidebar"
-import { ThemeProvider } from "@/components/theme-provider"
 import {
   SidebarInset,
   SidebarProvider,
 } from "@/components/ui/sidebar"
-import MydataDiscover from "@/my_components/datadiscover"
+import Mydata from "@/my_components/data"
 import HeaderPage from "@/my_components/HeaderPage"
 import { Suspense } from "react"
 
 export default function Page() {
-  return (
-  <ThemeProvider
-    attribute="class"
-    defaultTheme="system"
-    enableSystem
-    disableTransitionOnChange
-  >
-    <SidebarProvider>
+  return (  
+  <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
       <header className="border-grid sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 py-4">
-      <HeaderPage/>
-        </header>
-       <div>
-        <Suspense fallback={<div>Chargement des données...</div>}>
-          <MydataDiscover />
-        </Suspense>
-      </div>
-
+              <HeaderPage/>
+                </header>
+        <div>        
+          <div>
+          <Suspense>
+          <Mydata/> 
+          </Suspense>
+          </div>
+        </div>
       </SidebarInset>
     </SidebarProvider>
-    </ThemeProvider>
   )
 }

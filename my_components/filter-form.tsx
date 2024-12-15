@@ -102,7 +102,7 @@ export function Filter_From({ onFilterSubmit }: { onFilterSubmit: (filters: stri
 
         <Button
           type="submit"
-          className="w-full"
+          className=" ml-4 mr-4 w-full"
         >
           Appliquer les filtres
         </Button>

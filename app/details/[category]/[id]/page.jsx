@@ -74,14 +74,20 @@ export default async function MoviePage({ params }) {
         }}
       >
         <HeaderDetails show={show} showId={showId} category={category} />
+        
+        {videoUrl.length>0 ? (
         <section style={{ marginTop: "30px" }}>
           <h2 style={{ fontSize: "1.8rem", fontWeight: "600", marginBottom: "15px" }}>Média</h2>
           <TrailerDetails videoUrl={videoUrl} />
-        </section>
+        </section>):(<p></p>)}
+        
+        {backdrops.length>0 ? (
         <section style={{ marginTop: "30px" }}>
-          <h2 style={{ fontSize: "1.8rem", fontWeight: "600", marginBottom: "15px" }}>Gallery</h2>
+        <h2 style={{ fontSize: "1.8rem", fontWeight: "600", marginBottom: "15px" }}>Gallery</h2>
           <GalleryCarousel backdrops={backdrops} />
-        </section>
+        </section>):(<p></p>)}
+
+        {actors.length>0 ? (
         <section style={{ marginTop: "30px" }}>
           <h2 style={{ fontSize: "1.8rem", fontWeight: "600", marginBottom: "15px" }}>Acteurs</h2>
           <ScrollArea className="w-full rounded-md border">
@@ -90,7 +96,7 @@ export default async function MoviePage({ params }) {
               <ScrollBar orientation="horizontal" />
             </div>
           </ScrollArea>
-        </section>
+        </section>):(<p></p>)}
       </div>
     </div>
   );

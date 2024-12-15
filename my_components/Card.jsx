@@ -1,17 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function Card({ item, type ,loading }) {
+export default function Card({ item, type }) {
   const URL = `/details/${type}/${item.id}`;
-  const title = item.title || item.name || 'No title';
-  const date = item.release_date || item.first_air_date || 'No date';
+  const defaultImageUrl = "/assets/NoCard.png";
 
   return (
-    
+  
    <div >
          <Link href={URL} passHref>
          <img className='card-container'
-            src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+            src={
+              item.poster_path
+              ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
+              : defaultImageUrl 
+              }
             width={150}
             height={200}
           />

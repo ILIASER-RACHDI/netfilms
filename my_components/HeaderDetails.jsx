@@ -1,7 +1,8 @@
 import AddFavoris from "./AddFavoris";
 
-// HeaderDetails.js
 export default function HeaderDetails({ show , showId , category}) {
+    const defaultImageUrl = "/assets/NoCard.png"; // Chemin de l'image par défaut
+
     return (
         <div style={{ position: 'relative', overflow: 'hidden', backgroundColor: '#2b2b2b', padding: '40px', borderRadius: '3px' }}>
             {/* Image de fond */}
@@ -26,7 +27,10 @@ export default function HeaderDetails({ show , showId , category}) {
                 {/* Affiche du film */}
                 <div style={{ flex: '0 0 auto' }}>
                     <img
-                        src={`https://image.tmdb.org/t/p/original${show.poster_path}`}
+                        src={
+                            show.poster_path
+                            ? `https://image.tmdb.org/t/p/original${show.poster_path}`
+                            : defaultImageUrl}
                         alt={show.title || show.name}
                         style={{
                             borderRadius: '8px',

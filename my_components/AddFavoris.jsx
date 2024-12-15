@@ -3,8 +3,12 @@ import React, { useState } from "react";
 
 export default function AddFavoris({ filmId, category }) {
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleAddFavori = async () => {
+    setLoading(true); // Active l'état de chargement
+    setMessage(""); // Réinitialise le message
+
     try {
       const response = await fetch("/api/favoris/addtofavoris", {
         method: "POST",
@@ -24,6 +28,8 @@ export default function AddFavoris({ filmId, category }) {
     } catch (error) {
       console.error("Erreur lors de l'appel à l'API :", error);
       setMessage("Erreur lors de l'ajout du favori.");
+    } finally {
+      setLoading(false); // Désactive l'état de chargement
     }
   };
 
@@ -31,18 +37,29 @@ export default function AddFavoris({ filmId, category }) {
     <div>
       <button
         onClick={handleAddFavori}
+        disabled={loading} // Désactive le bouton pendant le chargement
         style={{
           padding: "10px 20px",
-          backgroundColor: "#007bff",
+          backgroundColor: loading ? "#6c757d" : "#007bff", // Change la couleur si chargé
           color: "white",
           border: "none",
           borderRadius: "5px",
-          cursor: "pointer",
+          cursor: loading ? "not-allowed" : "pointer", // Change le curseur si chargé
         }}
       >
-        Ajouter aux Favoris
+        {loading ? "En cours..." : "Ajouter aux Favoris"}
       </button>
-      {message && <p>{message}</p>}
+      {message && (
+        <p
+          style={{
+            marginTop: "10px",
+            color: message.includes("succès") ? "green" : "red", // Vert pour succès, rouge pour erreur
+            fontWeight: "bold",
+          }}
+        >
+          {message}
+        </p>
+      )}
     </div>
   );
 }

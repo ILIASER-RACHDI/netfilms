@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function CardV4Tight({ result }) {
   const imageUrl = result.poster_path
     ? `https://image.tmdb.org/t/p/w185${result.poster_path}`
-    : "https://via.placeholder.com/185x278?text=No+Image";
+    : `assets/NoCard.png`;
 
   // Construire le lien en fonction du type de média
   const mediaType = result.media_type || "movie";
@@ -11,13 +11,13 @@ export default function CardV4Tight({ result }) {
 
   return (
     <div
-      className="card dark:bg-black v4 tight flex items-start space-x-4 "
+      className="card dark:bg v4 tight flex items-start space-x-4 "
       data-object-id={result.id}
       data-media-type={mediaType}
     >
       {/* Section Image */}
       <div className="wrapper">
-        <div className="image glyphicons_v2 picture grey">
+        <div className="image">
           <div className="poster">
             <Link href={detailsUrl}>
                 <img

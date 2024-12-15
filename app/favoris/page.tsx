@@ -2,13 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { AppSidebar } from "@/components/app-sidebar";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Breadcrumb, BreadcrumbList } from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import CommandDialogDemo from "@/my_components/command";
-import { ModeToggle } from "@/my_components/ModeToggle";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import Card from "@/my_components/Card";
 import { SkeletonCards } from "@/my_components/skeletonCards";
+import HeaderPage from "@/my_components/HeaderPage";
 
 type FavorisResponse = {
   success: true;
@@ -75,17 +72,8 @@ export default function Favoris() {
       <SidebarProvider>
         <AppSidebar />
         <SidebarInset>
-          <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-            <div className="flex items-center gap-2 px-4">
-              <SidebarTrigger className="-ml-1" />
-              <Separator orientation="vertical" className="mr-2 h-4" />
-              <Breadcrumb>
-                <BreadcrumbList>
-                  <ModeToggle />
-                  <CommandDialogDemo />
-                </BreadcrumbList>
-              </Breadcrumb>
-            </div>
+        <header className="border-grid sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 py-4">
+        <HeaderPage/>
           </header>
 
           <h2 className="text-2xl font-bold mb-4">Mes Favoris</h2>
@@ -96,7 +84,7 @@ export default function Favoris() {
               <div className="page_wrapper">
                 {favoris.map((favori) => (
                   <div key={favori.filmId}>
-                    <Card item={favori} type={favori.category} loading={false}/>
+                    <Card item={favori} type={favori.category}/>
                   </div>
                 ))}
                 {message && <p>{message}</p>}

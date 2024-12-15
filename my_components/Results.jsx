@@ -55,7 +55,7 @@ export default function Results({ results, category ,loading}) {
       {/* Movies Section */}
       {category === 'movies' && (
         <div>
-          <h2 className="section-title dark:bg-orange-300">Movies</h2>
+          <h2 className="section-title">Movies</h2>
           <div className="page_wrapper">
             {movies.map((movie) => (
                 <Card item={movie} type="movie"  loading={loading}/>

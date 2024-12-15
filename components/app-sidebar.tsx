@@ -6,29 +6,27 @@ import {
   Command,
   Film,
   GalleryVerticalEnd,
-  PieChart,
-  Settings,
+  StarIcon,
   Tv,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import { HeaderSideBarre } from "@/my_components/headerSideBarre"
 
 // This is sample data.
 const data = {
   user: {
     name: "shadcn",
     email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "/avatars/shadcn.jpg" ,
   },
   teams: [
     {
@@ -50,7 +48,7 @@ const data = {
   navMain: [
     {
       title: "Movies",
-      url: "#",
+      url: "/?categorie=movies&type=top-rated",
       icon: Film,
       items: [
         { title: "Now Playing", url: "/?categorie=movies&type=now-playing" },
@@ -60,7 +58,7 @@ const data = {
     },
     {
       title: "TV Shows",
-      url: "#",
+      url: "/?categorie=shows&type=top-rated",
       icon: Tv,
       items: [
         { title: "On the Air", url: "/?categorie=shows&type=on-the-air" },
@@ -71,14 +69,9 @@ const data = {
   ],
   projects: [
     {
-      name: "Settings",
-      url: "#",
-      icon: Settings,
-    },
-    {
       name: "Favorite",
       url: "/favoris",
-      icon: PieChart,
+      icon: StarIcon,
     },
   ],
 };
@@ -86,9 +79,7 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar  collapsible="icon" variant="inset" {...props}>
-      <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
-      </SidebarHeader>
+    <HeaderSideBarre/>
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />

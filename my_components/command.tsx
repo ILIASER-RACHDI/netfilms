@@ -40,25 +40,24 @@ export default function CommandDialogDemo() {
 
   const handleSearch = () => {
     if (search.trim()) {
-      router.push(`/search/${search}`);
+      router.push(`/search?searchTerm=${search}`);
       setOpen(false); // Fermer la barre après la recherche
     }
   };
 
   return (
-    <>
-      <p className="text-sm text-muted-foreground">
-        Press{" "}
-        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-          <span className="text-xs">⌘J</span>
-          
-        </kbd>
-      </p>
+    <><div className="flex-grow relative  gap-2">
+    <button
+      onClick={() => setOpen(true)} // Ouvre la barre de commande
+      className="w-full flex-grow inline-flex items-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground px-2 py-2 relative h-8 justify-start rounded-[0.5rem] bg-muted/50 text-sm font-normal text-muted-foreground shadow-none"
+      >
+      <span className="inline-flex lg:hidden"> Type a command or search... </span>
+    </button>
+    </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        {/* Utilise onValueChange au lieu de onChange */}
         <CommandInput
           placeholder="Type a command or search..."
-          onValueChange={(value) => setSearch(value)} // Capture les modifications
+          onValueChange={(value) => setSearch(value)}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               e.preventDefault();
@@ -67,37 +66,21 @@ export default function CommandDialogDemo() {
           }}
         />
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
+        <CommandEmpty>
+          Press <span style={{ fontWeight: "bold" }}>Enter</span> ↵ to search
+        </CommandEmpty>
           <CommandGroup heading="Suggestions">
-            <CommandItem onSelect={() => router.push("/calendar")}>
+            <CommandItem onSelect={() => router.push("/accueil")}>
               <Calendar />
-              <span>Calendar</span>
-            </CommandItem>
-            <CommandItem onSelect={() => router.push("/emoji-search")}>
-              <Smile />
-              <span>Search Emoji</span>
-            </CommandItem>
-            <CommandItem onSelect={() => router.push("/calculator")}>
-              <Calculator />
-              <span>Calculator</span>
+              <span>Dashboard</span>
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup heading="Settings">
-            <CommandItem onSelect={() => router.push("/profile")}>
+          <CommandGroup heading="favoris">
+            <CommandItem onSelect={() => router.push("/favoris")}>
               <User />
-              <span>Profile</span>
+              <span>Favoris</span>
               <CommandShortcut>⌘P</CommandShortcut>
-            </CommandItem>
-            <CommandItem onSelect={() => router.push("/billing")}>
-              <CreditCard />
-              <span>Billing</span>
-              <CommandShortcut>⌘B</CommandShortcut>
-            </CommandItem>
-            <CommandItem onSelect={() => router.push("/settings")}>
-              <Settings />
-              <span>Settings</span>
-              <CommandShortcut>⌘S</CommandShortcut>
             </CommandItem>
           </CommandGroup>
         </CommandList>

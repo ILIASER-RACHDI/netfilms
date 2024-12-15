@@ -16,7 +16,7 @@ export default function MydataDiscover() {
   };
 
   // Construire l'URL dynamique avec les filtres
-  const apiUrl = `http://localhost:3000/api/discover?filters=${filters}`;
+  const apiUrl = `/api/discover?filters=${filters}`;
 
   useEffect(() => {
     async function fetchData() {
@@ -33,16 +33,10 @@ export default function MydataDiscover() {
 
   return (
     <div>
-      {/* Bouton pour afficher/cacher le composant FilterFilm */}
-      <button
-        onClick={() => setShowFilter((prev) => !prev)}
-      >
-        {showFilter ? "Close Filters" : "Open Filters"}
-      </button>
-
+    <div className="mr-4">
       {/* Affichage du composant FilterFilm */}
-      {showFilter && <Filter_From onFilterSubmit={handleFilters} />}
-
+      {<Filter_From onFilterSubmit={handleFilters}/>}
+      </div>
       {data ? (
         <Results results={data} category={categorie} loading={false} />
       ) : (
