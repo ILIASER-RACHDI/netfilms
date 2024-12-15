@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "my_components/Results.jsx", "my_components/Card.jsx", "my_components/command.jsx", "my_components/GalleryDetails.jsx", "my_components/data.jsx", "my_components/AddFavoris.jsx", "my_components/searchCard.jsx", "my_components/signin-form.jsx", "my_components/signout-form.jsx", "my_components/signup-from.jsx", "my_components/skeletonCards.jsx", "my_components/datadiscover.jsx"],
   "exclude": ["node_modules"]
 }

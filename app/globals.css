@@ -2,20 +2,487 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw; /* Occupe toute la largeur de l'écran */
+  min-height: 100vh;
+  overflow-x: hidden; /* Évite les scrollbars horizontales */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.card-container {
+  border-radius: 15px; /* Arrondi des coins */
+  overflow: hidden; /* S'assurer que le contenu suit l'arrondi */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+div.page_wrapper {
+  width: 100%;
+  display: flex
+;
+  gap: 0.6%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 2%; /* Add space to the left as a percentage */
+  padding-right: 2%; /* Add space to the right as a percentage */
+  margin: 0 auto; /* Center the content */
+}
+
+ol.people.scroller {
+  overflow-y: hidden;
+  margin-left: -10px;
+  margin-top: -10px;
+  padding-bottom: 10px;
+}
+ol.people {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding: 0;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  display: flex
+;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+/* discover page */
+
+.section-container {
+  margin: 16px auto;
+  padding: 16px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.scroll-area {
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.scroll-content {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
+
+.card-wrapper {
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.scrollbar {
+  height: 9px;
+}
+
+/*card scroller*/
+.card_scroller {
+  display: flex;
+  overflow-x: auto; /* Activer le défilement horizontal */
+  gap: 16px; /* Espacement entre les cartes */
+  padding: 8px; /* Espacement interne pour éviter que les éléments touchent les bords */
+  scroll-behavior: smooth; /* Défilement fluide */
+  max-width: 100%; /* S'assure que le conteneur ne dépasse pas la largeur de la page */
+}
+
+.card_scroller > div {
+  flex: 0 0 auto; /* Empêche les éléments de rétrécir ou s'étirer */
+}
+
+.card_scroller::-webkit-scrollbar {
+  height: 8px; /* Hauteur de la barre de défilement */
+}
+
+.card_scroller::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Couleur de la barre */
+  border-radius: 4px; /* Arrondi de la barre */
+}
+
+.card_scroller::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Couleur de la piste */
+}
+
+/*page results */
+
+/*search page*/
+div.white_column {
+  background-color: #fff;
+  display: flex
+;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  padding-right: 6%;
+  padding-left: 3%;
+}
+
+div.reverse div.white_column {
+  padding-right: 0;
+  padding-left: 30px;
+}
+section.panel:last-of-type {
+  padding-bottom: 0;
+}
+
+section.panel:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+section.panel {
+  width: 100%;
+  display: block;
+  padding: 30px 0;
+  border-top: 1px solid #d7d7d7;
+}
+div.results.flex.results {
+  align-content: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+div.results.flex, div.results.flex.results_backdrop_card, div.results.flex.results_poster_card, div.results.flex.results_profile_card {
+  justify-content: space-between;
+}
+div.results.flex {
+  display: flex
+;
+  flex-wrap: wrap;
+}
+/*card search*/
+div.card.v4.tight:first-of-type, div.column_content form h3:first-of-type {
+  margin: 10;
+  
+}
+div.card.v4.tight {
+  flex-wrap: wrap;
+  margin: 10;
+}
+div.card.v4 {
+  width: 100%;
+  display: flex
+;
+}
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.441);
+  border-radius:5px;
+}
+.k-grid .k-grid-header-wrap, .k-grid table, body * {
+  box-sizing: border-box;
+}
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+div.card.v4.tight>div.wrapper {
+  display: flex
+;
+  max-width: calc(100vw - 82px);
+}
+.k-grid .k-grid-header-wrap, .k-grid table, body * {
+  box-sizing: border-box;
+}
+div.card.v4.tight div.image img {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+div.card.v4.tight div.image {
+  min-width: 94px;
+  width: 94px;
+  height: 141px;
+}
+div.card.v4 div.image {
+  box-sizing: border-box;
+}
+div.card.v4 div.image, div.card.v4 div.image img {
+  width: calc(200px / 1.5);
+  min-width: calc(200px / 1.5);
+  height: 200px;
+  border-top-left-radius: 5px;
+}
+.glyphicons_v2.picture.grey {
+  background-image: url(/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb….svg);
+}
+.card div.no_image_holder, .card2 div.no_image_holder, .index div.no_image_holder {
+  border-radius: 0;
+  border: 0;
+}
+.glyphicons_v2.picture {
+  background-image: url(/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-4ee3744….svg);
+}
+
+/*images search*/
+div.card.v4.tight div.image div.poster, ul.horizontal_media_list li img.placeholder {
+  width: 100%;
+  height: 100%;
+}
+div.card.v4 div.image div.poster {
+  width: 100%;
+  height: 100%;
+}
+.k-grid .k-grid-header-wrap, .k-grid table, body * {
+  box-sizing: border-box;
+}
+
+/* details image-container */
+/* Conteneur pour limiter la taille des images */
+/* Conteneur principal */
+/* Conteneur principal */
+.slider {
+  height: 250px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+
+}
+
+/* Bande défilante */
+.slide-track {
+  display: flex;
+  animation: scroll 20s linear infinite; /* Animation de défilement */
+  /*animation-play-state: running;  Animation active par défaut */
+}
+
+/* Arrêter l'animation au survol */
+.slider:hover .slide-track {
+  animation-play-state: paused; /* Animation mise en pause */
+}
+
+/* Boutons de défilement */
+.fleche_scroll {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 10px;
+  border-radius: 5%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.fleche_scroll:hover {
+  transform: scale(1.1);
+}
+
+/* Chaque slide */
+.slide {
+  height: 250px;
+  width: 450px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  perspective: 100px;
+  gap: 10px;
+}
+
+/* Images */
+.img_gallery {
+  transition: transform 1s;
+  object-fit: contain; /* Conserve les proportions de l'image */
+  width: 120%; /* Augmente la largeur de 120% */
+  height: 120%; /* Ajuste la hauteur proportionnellement à la largeur */
+}
+
+.img_gallery:hover {
+  transform: scale(1.1); /* Zoom sur hover */
+}
+
+/* Dégradés sur les bords */
+.slider::before,
+.slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
+.slider::before {
+  left: 0;
+}
+
+.slider::after {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.skeleton-card-container :first-of-type{
+  margin-top: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.566);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 160px;
+  height:240px
+}
+
+.skeleton-cards-container{
+  margin-top: 7px;
+  width: 100%;
+  display: flex
+;
+  gap: 0.6%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 2%; /* Add space to the left as a percentage */
+  padding-right: 2%; /* Add space to the right as a percentage */
+  margin: 0 auto; /* Center the content */
+}
+
+.card-container {
+  margin-top: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.566);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 160px;
+  height:240px
+}
+
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Animation de défilement */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 
+
+  
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 24 9.8% 10%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }/*hsl(27, 65%, 51%);*/
+  .dark {
+    --background: 2 1% 5%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 60 9.1% 97.8%;
+    --primary-foreground: 24 9.8% 10%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
