@@ -33,7 +33,7 @@ export async function middleware(req: any) {
 
   // If the user is not logged in, redirect to /Auth (but avoid redirecting /Auth itself)
   if (!isLoggedIn) {
-    if (pathname !== "/Auth") {
+    if (!pathname.startsWith("/Auth")) {
       return NextResponse.redirect(new URL("/Auth", origin));
     }
     return NextResponse.next();
