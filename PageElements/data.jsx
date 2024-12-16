@@ -2,7 +2,7 @@
 import "@/styles/buttons/buttondefilement.css";
 import React, { useState, useEffect, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
-import Results from "@/my_components/Results";
+import Results from "@/PageElements/Results";
 import { SkeletonCards } from "./skeletonCards";
 
 export default function Mydata() {

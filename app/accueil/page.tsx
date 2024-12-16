@@ -5,8 +5,8 @@ import {
   SidebarInset,
   SidebarProvider,
 } from "@/components/ui/sidebar"
-import MydataDiscover from "@/my_components/datadiscover"
-import HeaderPage from "@/my_components/HeaderPage"
+import MydataDiscover from "@/PageElements/datadiscover"
+import HeaderPage from "@/PageElements/HeaderPage"
 import { Suspense } from "react"
 
 export default function Page() {

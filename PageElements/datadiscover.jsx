@@ -1,13 +1,13 @@
 "use client";
 import "@/styles/pages/discover.css"
 import React, { useState, useEffect } from "react";
-import Results from "@/my_components/Results";
+import Results from "@/PageElements/Results";
 import { Filter_From } from "./filter-form";
+import { SkeletonCards } from "./skeletonCards";
 
 export default function MydataDiscover() {
   const categorie = "discover";
   const [data, setData] = useState(null);
-  const [showFilter, setShowFilter] = useState(false);
   const [filters, setFilters] = useState(""); // Stocker les filtres sous forme de chaîne
 
   // Fonction de gestion des filtres
@@ -41,7 +41,7 @@ export default function MydataDiscover() {
       {data ? (
         <Results results={data} category={categorie} loading={false} />
       ) : (
-        <p>Chargement des données...</p>
+        <SkeletonCards title={"discover"}/>
       )}
     </div>
   );

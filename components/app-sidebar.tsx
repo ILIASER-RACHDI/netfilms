@@ -19,7 +19,7 @@ import {
   SidebarFooter,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import { HeaderSideBarre } from "@/my_components/headerSideBarre"
+import { HeaderSideBarre } from "@/PageElements/headerSideBarre"
 
 // This is sample data.
 const data = {

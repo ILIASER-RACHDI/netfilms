@@ -1,12 +1,11 @@
 "use client";
 
-import CardV4Tight from "@/my_components/searchCard";
+import CardV4Tight from "@/PageElements/searchCard";
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
-import HeaderPage from "@/my_components/HeaderPage";
-import { SkeletonCards } from "@/my_components/skeletonCards";
+import HeaderPage from "@/PageElements/HeaderPage";
 
 export default function SearchPage() {
   const searchParams = useSearchParams();

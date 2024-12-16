@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import { AppSidebar } from "@/components/app-sidebar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import Card from "@/my_components/Card";
-import { SkeletonCards } from "@/my_components/skeletonCards";
-import HeaderPage from "@/my_components/HeaderPage";
+import Card from "@/PageElements/Card";
+import { SkeletonCards } from "@/PageElements/skeletonCards";
+import HeaderPage from "@/PageElements/HeaderPage";
 
 type FavorisResponse = {
   success: true;

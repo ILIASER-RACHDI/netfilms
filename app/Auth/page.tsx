@@ -1,13 +1,12 @@
 "use client";
-
 import { useState } from "react";
 import { signIn} from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { SignIn } from "@/my_components/signin-form";
-import { SignUp } from "@/my_components/signup-from";
+import { SignIn } from "@/PageElements/AuthentificationElements/signin-form";
+import { SignUp } from "@/PageElements/AuthentificationElements/signup-from";
 
 export default function AuthForm() {
   const [isRegister, setIsRegister] = useState<boolean>(false); // Gère le mode Connexion/Inscription

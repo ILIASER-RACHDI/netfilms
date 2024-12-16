@@ -3,6 +3,8 @@
 import { db } from "@/lib/db";
 import { users } from "@/lib/schema";
 import { eq } from "drizzle-orm";
+import bcrypt from "bcrypt";
+
 
 export async function POST(req: Request) {
   try {
@@ -14,7 +16,6 @@ export async function POST(req: Request) {
       });
     }
 
-    // Rechercher l'utilisateur dans la base de données
     const user = await db.query.users.findFirst({
       where: eq(users.email, email),
     });
@@ -24,15 +25,19 @@ export async function POST(req: Request) {
         status: 404,
       });
     }
+    if (!user.password) {
+      return new Response(JSON.stringify({ error: " error" }), {
+        status: 404,
+      });
+    }
 
-    // Comparer directement le mot de passe en clair
-    if (user.password !== password) {
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
       return new Response(JSON.stringify({ error: "Invalid password" }), {
         status: 401,
       });
     }
 
-    // Si tout est correct, retourner une réponse de succès
     return new Response(
       JSON.stringify({ success: true, message: "Logged in successfully" }),
       { status: 200 }

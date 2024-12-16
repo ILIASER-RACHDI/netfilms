@@ -1,8 +1,8 @@
-import HeaderDetails from "../../../../my_components/HeaderDetails";
-import ActorsDetails from "../../../../my_components/ActorsDetails";
-import TrailerDetails from "../../../../my_components/TrailerDetails";
+import HeaderDetails from "../../../../PageElements/DetailsPageElements/HeaderDetails";
+import ActorsDetails from "../../../../PageElements/DetailsPageElements/ActorsDetails";
+import TrailerDetails from "../../../../PageElements/DetailsPageElements/TrailerDetails";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import GalleryCarousel from "../../../../my_components/GalleryDetails";
+import GalleryCarousel from "../../../../PageElements/DetailsPageElements/GalleryDetails";
 
 export default async function MoviePage({ params }) {
   const showId = params.id;

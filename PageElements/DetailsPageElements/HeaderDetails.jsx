@@ -1,4 +1,4 @@
-import AddFavoris from "./AddFavoris";
+import AddFavoris from "@/PageElements/AddFavoris";
 
 export default function HeaderDetails({ show , showId , category}) {
     const defaultImageUrl = "/assets/NoCard.png"; // Chemin de l'image par défaut

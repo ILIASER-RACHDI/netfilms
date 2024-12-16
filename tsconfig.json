@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "my_components/Results.jsx", "my_components/Card.jsx", "my_components/command.jsx", "my_components/GalleryDetails.jsx", "my_components/data.jsx", "my_components/AddFavoris.jsx", "my_components/searchCard.jsx", "my_components/signin-form.jsx", "my_components/signout-form.jsx", "my_components/signup-from.jsx", "my_components/skeletonCards.jsx", "my_components/datadiscover.jsx", "my_components/HeaderPage.jsx", "app/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "PageElements/Results.jsx", "PageElements/Card.jsx", "PageElements/command.jsx", "PageElements/DetailsPageElements/GalleryDetails.jsx", "PageElements/data.jsx", "PageElements/AddFavoris.jsx", "PageElements/searchCard.jsx", "PageElements/signin-form.jsx", "PageElements/signout-form.jsx", "PageElements/signup-from.jsx", "PageElements/skeletonCards.jsx", "PageElements/datadiscover.jsx", "PageElements/HeaderPage.jsx", "app/page.jsx"],
   "exclude": ["node_modules"]
 }

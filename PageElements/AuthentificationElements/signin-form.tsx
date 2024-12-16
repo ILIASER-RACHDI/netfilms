@@ -14,7 +14,7 @@ export function SignIn() {
         await signIn("credentials", {
             email: data.email as string,
             password: data.password as string,
-            callbackUrl: "/", // Redirection après connexion
+            callbackUrl: "/accueil", // Redirection après connexion
           });
       }}
     >
@@ -49,8 +49,6 @@ export function SignIn() {
             >
         Connexion
       </Button>
-
-
     </form>
   )
 }

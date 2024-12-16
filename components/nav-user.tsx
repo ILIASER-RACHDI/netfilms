@@ -23,7 +23,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { SignOut } from "@/my_components/signout-form"
+import { SignOut } from "@/PageElements/AuthentificationElements/signout-form"
 import { useSession } from "next-auth/react"
 
 export function NavUser({
