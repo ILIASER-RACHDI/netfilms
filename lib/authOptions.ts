@@ -4,7 +4,6 @@ import { DrizzleAdapter } from "@auth/drizzle-adapter"
 import { db } from "./db"
 
 import GithubProvider from "next-auth/providers/github";
-import GoogleProvider from "next-auth/providers/google";
 import Credentials from "next-auth/providers/credentials"
 import { getUserFromDb } from "@/app/actions/user.actions";
 import { addUserFromDb } from "@/app/actions/addUser";
