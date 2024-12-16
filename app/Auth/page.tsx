@@ -56,15 +56,6 @@ export default function AuthForm() {
               <FaGithub size="25" />
               {isRegister ? "S’inscrire avec Github" : "Connexion avec Github"}
             </Button>
-            <Button
-              className="flex items-center w-full gap-4 px-12 mb-4 bg-transparent rounded-full"
-              variant="outline"
-              onClick={() => handleSignInProvider("google")}
-              disabled={loading}
-            >
-              <FcGoogle size="25" />
-              {isRegister ? "S’inscrire avec Google" : "Connexion avec Google"}
-            </Button>
           </div>
           {/* Connexion classique avec email/password */}
                 {isRegister ? <SignUp /> : <SignIn />}
