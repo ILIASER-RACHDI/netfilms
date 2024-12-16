@@ -18,7 +18,7 @@ export default function SearchPage() {
   useEffect(() => {
     const currentSearchTerm = searchParams?.get("searchTerm");
 
-    if (!currentSearchTerm) return; // Si aucun paramètre de recherche, on ne fait rien
+    if (!currentSearchTerm) return;
 
     setLoading(true);
     setError("");
@@ -49,7 +49,6 @@ export default function SearchPage() {
           <HeaderPage />
         </div>
         <div className="section-container">
-          {loading && <SkeletonCards title={"search"} />}
           {!loading && !error && (
             <>
               <div>

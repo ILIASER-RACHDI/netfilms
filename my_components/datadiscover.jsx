@@ -1,4 +1,5 @@
 "use client";
+import "@/styles/pages/discover.css"
 import React, { useState, useEffect } from "react";
 import Results from "@/my_components/Results";
 import { Filter_From } from "./filter-form";

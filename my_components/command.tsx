@@ -1,13 +1,9 @@
 "use client";
-
+import "@/styles/components/searchbarre.css"
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import {
-  Calculator,
   Calendar,
-  CreditCard,
-  Settings,
-  Smile,
   User,
 } from "lucide-react";
 import {

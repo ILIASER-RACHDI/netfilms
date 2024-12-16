@@ -1,4 +1,5 @@
 "use client";
+import "@/styles/components/pagewrapper.css"
 import React, { useEffect, useState } from "react";
 import { AppSidebar } from "@/components/app-sidebar";
 import { ThemeProvider } from "@/components/theme-provider";

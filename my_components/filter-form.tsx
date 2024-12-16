@@ -1,5 +1,5 @@
 "use client";
-
+import "@/styles/buttons/buttonfiltre.css"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -102,7 +102,7 @@ export function Filter_From({ onFilterSubmit }: { onFilterSubmit: (filters: stri
 
         <Button
           type="submit"
-          className=" ml-4 mr-4 w-full"
+          className="button_filtre"
         >
           Appliquer les filtres
         </Button>

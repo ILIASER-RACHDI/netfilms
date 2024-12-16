@@ -1,7 +1,8 @@
 import React from 'react';
 import Card from './Card';
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-
+import "@/styles/components/pagewrapper.css"
+import "@/styles/pages/discover.css"
 export default function Results({ results, category ,loading}) {
   let movies = [];
   let shows = [];

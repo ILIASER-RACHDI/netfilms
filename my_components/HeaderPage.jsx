@@ -11,12 +11,9 @@ export default function HeaderPage() {
     <SidebarTrigger className="-ml-1" />
     <Separator orientation="vertical" className="mr-4 h-4" />
     <div className="flex w-full items-center justify-end gap-4">
-  <BreadcrumbList className="flex items-center gap-4 flex-grow justify-end">
-    <CommandDialogDemo className="w-full mr-4" />
-  </BreadcrumbList>
-  <ModeToggle className="ml-auto pl-4" />
-</div>
-
+    <CommandDialogDemo />
+    <ModeToggle  />
+    </div>
   </div>
   )
 }

@@ -1,0 +1,25 @@
+ol.people.scroller {
+    overflow-y: hidden;
+    margin-left: -10px;
+    margin-top: -10px;
+    padding-bottom: 10px;
+  }
+  ol.people {
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding: 0;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    display: flex
+  ;
+    position: relative;
+    top: 0;
+    left: 0;
+  }

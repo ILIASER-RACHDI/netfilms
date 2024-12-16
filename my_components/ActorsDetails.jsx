@@ -1,3 +1,5 @@
+import "@/styles/components/scrollerPeople.css"
+
 export default function ActorsDetails({ actors }) {
   const defaultImageUrl = "/assets/unknown.png"; // Chemin de l'image par défaut
 

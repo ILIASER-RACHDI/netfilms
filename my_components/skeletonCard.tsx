@@ -1,3 +1,4 @@
+import "@/styles/components/skeleton.css"
 import { Skeleton } from "@/components/ui/skeleton";
 
 export function SkeletonCard() {

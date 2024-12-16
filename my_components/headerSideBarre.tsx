@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link"; 
 
 export function HeaderSideBarre() {
-  const URL = "/acceuil";
+  const URL = "/accueil";
   return (
     <div className="flex flex-col items-center p-4 dark:bg-white rounded-lg">
       <Link href={URL}>

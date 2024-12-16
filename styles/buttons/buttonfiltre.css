@@ -1,0 +1,13 @@
+.button_filtre {
+    margin-left: 1rem; 
+    width: 90%; 
+    border-radius: 0.5rem; 
+    padding: 0.5rem 1rem;
+    cursor: pointer; 
+    justify-content: center;
+  }
+  
+  .button_filtre:hover {
+    background-color: #2a4153; 
+  }
+  

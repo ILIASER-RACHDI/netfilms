@@ -16,6 +16,7 @@ export function ModeToggle() {
   const { setTheme } = useTheme()
 
   return (
+    <div className="flex w-full items-center justify-end">
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
@@ -36,5 +37,7 @@ export function ModeToggle() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
+    </div>
+
   )
 }

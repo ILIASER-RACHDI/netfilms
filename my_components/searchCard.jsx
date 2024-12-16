@@ -1,3 +1,4 @@
+import "@/styles/components/cardsearch.css";
 import Link from "next/link";
 
 export default function CardV4Tight({ result }) {

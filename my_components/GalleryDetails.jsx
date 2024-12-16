@@ -1,4 +1,4 @@
-
+import "@/styles/components/gallery.css"
 import * as React from "react";
 export default function GalleryCarousel({backdrops}) {
 
