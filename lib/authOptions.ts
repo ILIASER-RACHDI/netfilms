@@ -23,8 +23,6 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
     Credentials({
-      // You can specify which fields should be submitted, by adding keys to the `credentials` object.
-      // e.g. domain, username, password, 2FA token, etc.
       credentials: {
         email: {},
         password: {},
@@ -34,17 +32,10 @@ export const authOptions: NextAuthOptions = {
           throw new Error("Credentials are required.");
         }
         let user = null
- 
-        // logic to salt and hash password
-        //const pwHash = saltAndHashPassword(credentials.password)
- 
-        // logic to verify if the user exists
         user = await getUserFromDb(
           credentials.email as string
           , credentials.password as string) 
         if (!user) {
-          // No user found, so this is their first attempt to login
-          // Optionally, this is also the place you could do a user registration
           throw new Error("Invalid credentials.")
         }
 
